@@ -28,7 +28,7 @@ You can easily run the proxy along with other services using `docker-compose`.
 Here is an example that will place a TLS proxy in front of you custom docker image
 listening on http port 8000.
 
-```
+<pre>
 version: 3.7
 services:
   my_app:
@@ -44,5 +44,4 @@ services:
     ports:
       - "80:80"
       - "443:443"
-
-```
+</pre>

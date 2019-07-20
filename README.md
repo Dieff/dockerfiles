@@ -1,5 +1,7 @@
 # Dockerfiles
 
+[![builds.sr.ht status](https://builds.sr.ht/~dieff/dockerfiles.svg)](https://builds.sr.ht/~dieff/dockerfiles?)
+
 A repository of personal Docker images for various services
 and applications.
 

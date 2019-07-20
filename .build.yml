@@ -8,7 +8,7 @@ sources:
   - "https://git.sr.ht/~dieff/dockerfiles"
 secrets:
   - "a270ed90-5fe7-4bac-9d11-c3f479e2bfc7" # github ssh key
-  - "1f082fda-00c7-443a-906c-effcb0c66b8c" # docker creds
+  - "e51c90e2-82ae-4c8b-ac6b-eeb900bbc47b" # docker creds
 tasks:
   - mirrir_to_gh: |
       cd dockerfiles
