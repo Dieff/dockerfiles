@@ -16,8 +16,13 @@ tasks:
       echo -e "Host *\n    StrictHostKeyChecking no" >> ~/.ssh/config
       git remote add github git@github.com:Dieff/dockerfiles.git
       git push github
-  - build_and_deploy_docker: |
-      sudo service docker start
+  - docker_setup: |
+      sudo mount -t tmpfs -o size=4G /dev/null /dev/shm
+      sudo service cgroups start
+      sleep 2
+      sudo nohup dockerd --bip 172.18.0.1/16 </dev/null >/dev/null 2>&1 &
+      sleep 5
       sudo usermod -aG docker $(whoami)
+  - build_and_deploy_docker: |
       cd dockerfiles
       ./publish.sh
