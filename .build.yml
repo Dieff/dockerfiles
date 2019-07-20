@@ -18,5 +18,6 @@ tasks:
       git push github
   - run_deploy: |
       sudo service docker start
+      sudo usermod -aG docker $(whoami)
       cd dockerfiles
-      sudo bash publish.sh
+      bash publish.sh
