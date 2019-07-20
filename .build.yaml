@@ -1,0 +1,18 @@
+image: debian
+packages:
+  - "docker.io"
+  - "git"
+sources:
+  - "https://git.sr.ht/~dieff/dockerfiles"
+secrets:
+  - "a270ed90-5fe7-4bac-9d11-c3f479e2bfc7" # github ssh key
+  - "1f082fda-00c7-443a-906c-effcb0c66b8c" # docker creds
+tasks:
+  - mirrir_to_gh: |
+      cd dockerfiles
+      sshopts="ssh -o StrictHostKeyChecking=no"
+      git remote add github git@github.com:Dieff/dockerfiles.git
+      git push github master
+  - run_deploy: |
+      cd dockerfiles
+      bash publish.sh
