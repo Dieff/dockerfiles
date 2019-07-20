@@ -3,7 +3,7 @@ packages:
   - "docker"
   - "git"
   - "bash"
-  - "openssh"
+  - "shadow"
 sources:
   - "https://git.sr.ht/~dieff/dockerfiles"
 secrets:
@@ -16,8 +16,9 @@ tasks:
       echo -e "Host *\n    StrictHostKeyChecking no" >> ~/.ssh/config
       git remote add github git@github.com:Dieff/dockerfiles.git
       git push github
-  - run_deploy: |
+  - setup_docker: |
       sudo service docker start
       sudo usermod -aG docker $(whoami)
+  - build_and_deploy_docker: |
       cd dockerfiles
-      bash publish.sh
+      ./publish.sh
