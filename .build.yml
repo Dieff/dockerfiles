@@ -3,6 +3,7 @@ packages:
   - "docker"
   - "git"
   - "bash"
+  - "openssh"
 sources:
   - "https://git.sr.ht/~dieff/dockerfiles"
 secrets:
