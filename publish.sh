@@ -3,7 +3,7 @@
 # login to docker
 DOCKER_USER=$(head -n 1 ~/.dockerhub)
 DOCKER_PASS=$(head -n 2 ~/.dockerhub | tail -n 1)
-cat $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+docker login -u $DOCKER_USER -p $DOCKER_PASS
 
 # build and push each image
 for dir in */; do
