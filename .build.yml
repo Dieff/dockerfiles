@@ -1,7 +1,8 @@
-image: debian/stable
+image: alpine/edge
 packages:
-  - "docker.io"
+  - "docker"
   - "git"
+  - "bash"
 sources:
   - "https://git.sr.ht/~dieff/dockerfiles"
 secrets:
@@ -14,6 +15,6 @@ tasks:
       git remote add github git@github.com:Dieff/dockerfiles.git
       git push github
   - run_deploy: |
-      test (git branch) != '* master' && exit 1
       cd dockerfiles
+      test (git branch) != '* master' && exit 1
       bash publish.sh
