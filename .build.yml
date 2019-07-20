@@ -12,7 +12,8 @@ tasks:
       cd dockerfiles
       sshopts="ssh -o StrictHostKeyChecking=no"
       git remote add github git@github.com:Dieff/dockerfiles.git
-      git push github master
+      git push github
   - run_deploy: |
+      test (git branch) != '* master' && exit 1
       cd dockerfiles
       bash publish.sh

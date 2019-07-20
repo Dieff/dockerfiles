@@ -18,7 +18,7 @@ docker run -d -e "HOST=<the name of my site>" -e "UPSTEAM_SERVER=<final destinat
 
 ### Usage
 
-The function of the image can be controlled with just 3 env vars.
+The function of the image can be controlled with just 4 env vars.
 
 `$HOST` - the server name of your site.
 `$EMAIL` - Your email. This is used by Letsencrypt to contact you if necessary. It is not public.
