@@ -19,4 +19,4 @@ tasks:
   - run_deploy: |
       sudo service docker start
       cd dockerfiles
-      sudo -g docker bash publish.sh
+      sudo bash publish.sh
